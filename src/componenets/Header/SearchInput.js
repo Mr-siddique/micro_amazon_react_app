@@ -16,19 +16,14 @@ const SearchInput = () => {
 
   const handleKeyUp = (e) => {
     if (e.keyCode !== 13) return;
-    setInputValue("");
     navigate("/search");
     dispatch(searchActions.setSearchInput(inputValue));
   };
 
   const handleChange = (e) => {
-    dispatch(
-      searchActions.setSearchData(
-        e.target.value === "All"
-          ? currData
-          : currData.filter((data) => data.category === e.target.value)
-      )
-    );
+    if (e.target.value == "None") return;
+
+    dispatch(searchActions.setSearchInput(e.target.value));
     navigate("/search");
   };
   return (
@@ -50,9 +45,9 @@ const SearchInput = () => {
         }}
         onChange={handleChange}
       >
-        <option>All</option>
+        <option>None</option>
         {Catogery?.map((elem) => (
-          <option key={elem.id}>{elem}</option>
+          <option key={elem?.id}>{elem}</option>
         ))}
       </select>
       <input
@@ -74,11 +69,7 @@ const SearchInput = () => {
           }}
           onMouseEnter={(e) => (e.target.style.backgroundColor = "#F3A848")}
           onMouseLeave={(e) => (e.target.style.backgroundColor = "#FDBD69")}
-          onClick={() => {
-            setInputValue("");
-            dispatch(searchActions.setSearchInput(inputValue));
-            return;
-          }}
+          onClick={() => dispatch(searchActions.setSearchInput(inputValue))}
         >
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>

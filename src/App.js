@@ -6,11 +6,12 @@ import Header from "./componenets/Header/Header";
 import Search from "./componenets/Search/Search";
 import SingleProduct from "./componenets/ProductCards/SingleProduct";
 import { searchActions } from "./store/searchSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const App = () => {
   
   const dispatch=useDispatch();
+  const data=useSelector(state=>state.search.data);
   useEffect(() => {
     const fetchData = async () => {
       try {
