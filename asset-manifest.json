@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/micro_amazon_react_app.git/static/js/main.eb4b4a58.js",
-    "index.html": "/micro_amazon_react_app.git/index.html",
-    "main.eb4b4a58.js.map": "/micro_amazon_react_app.git/static/js/main.eb4b4a58.js.map"
+    "main.js": "/micro_amazon_react_app/static/js/main.eb4b4a58.js",
+    "index.html": "/micro_amazon_react_app/index.html",
+    "main.eb4b4a58.js.map": "/micro_amazon_react_app/static/js/main.eb4b4a58.js.map"
   },
   "entrypoints": [
     "static/js/main.eb4b4a58.js"
